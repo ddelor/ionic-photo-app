@@ -1,0 +1,8 @@
+/* Empty. Add your own CSS if you like */
+#frames img {
+    width: 100%;
+}
+#frames img.active {
+    background-color: #ccc;
+    box-shadow: 5px 5px 5px #ccc;
+}

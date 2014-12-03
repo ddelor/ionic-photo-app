@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+</head>
+<body ng-app="starter">
+
+    <ion-pane ng-controller="photoCtrl">
+        <ion-header-bar class="bar-positive">
+            <h1 class="title">Mon app de traitement d'images</h1>
+        </ion-header-bar>
+        <ion-content class="padding">
+            <img id="img1" src="img/01.jpg" alt="">
+            <h3>Choississez un cadre :</h3>
+            <div id="frames" class="row">
+                <div class="col">
+                    <a href ng-click="tab = 1"><img src="img/02.png" ng-attr-id="{{ tab===1 && 'frame' || ''}}" ng-class="{active:tab===1}"></a>
+                </div>
+                <div class="col">
+                    <a href ng-click="tab = 2"><img src="img/03.png" ng-attr-id="{{ tab===2 && 'frame' || ''}}" ng-class="{active:tab===2}"></a>
+                </div>
+                <div class="col">
+                    <a href ng-click="tab = 3"><img src="img/04.png" ng-attr-id="{{ tab===3 && 'frame' || ''}}" ng-class="{active:tab===3}"></a>
+                </div>
+            </div>
+            <button class="button button-block button-positive" ng-click="merge()">Fusionner la photo avec le cadre</button>
+            <canvas id="myCanvas"></canvas>
+        </ion-content>
+    </ion-pane>
+</body>
+</html>
