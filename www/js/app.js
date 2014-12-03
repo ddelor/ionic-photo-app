@@ -18,16 +18,16 @@ angular.module('starter', ['ionic'])
     });
 })
 
-.controller('photoCtrl', function($scope) {
+.controller('photoCtrl', function($scope, $window) {
     console.log('photoCtrl on');
+
+    $scope.reload = function() {
+        $window.location.reload();
+    }
 
     $scope.merge = function() {
         var img1 = document.getElementById('img1');
         var frame = document.getElementById('frame');
-        // var frame = document.getElementsByClassName('active')[0].outerHTML;
-        console.log(img1);
-        // console.log(frames);
-        console.log(frame);
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext('2d');
 
@@ -38,5 +38,17 @@ angular.module('starter', ['ionic'])
         context.drawImage(img1, 0, 0);
         context.globalAlpha = 1.0;
         context.drawImage(frame, 0, 0);
+
+        $scope.cancel = true;
+    }
+
+    $scope.cancelAction = function() {
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+        canvas.width = 0;
+        canvas.height = 0;
+
+        context.clearRect ( 0 , 0 , canvas.width, canvas.height );
+        $scope.cancel = false;
     }
 })
