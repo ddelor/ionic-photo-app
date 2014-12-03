@@ -25,6 +25,26 @@ angular.module('starter', ['ionic'])
         $window.location.reload();
     }
 
+    $scope.filterAction = function(filter) {
+        var img1 = document.getElementById('img1');
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+        var effect = filter;
+
+        canvas.width = img1.width;
+        canvas.height = img1.height;
+
+        context.drawImage(img1, 0, 0);
+
+        Caman(context, function () {
+            console.log(this);
+            this.effect();
+            this.render();
+        });
+
+        $scope.cancel = true;
+    }
+
     $scope.merge = function() {
         var img1 = document.getElementById('img1');
         var frame = document.getElementById('frame');

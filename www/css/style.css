@@ -6,3 +6,16 @@
     background-color: #ccc;
     box-shadow: 5px 5px 5px #ccc;
 }
+#filterContainer li { display: inline-block; }
+#filterContainer li a {
+    display: block;
+    cursor: pointer;
+    background-color: #ccc;
+    padding: 5px;
+    margin: 0 5px 10px 5px;
+    text-decoration: none;
+    color: #666;
+    font-family: Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 10px;
+}

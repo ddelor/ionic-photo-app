@@ -15,6 +15,7 @@
     <!-- ionic/angularjs js -->
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/caman.full.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -30,6 +31,30 @@
         </ion-header-bar>
         <ion-content class="padding">
             <img id="img1" src="img/01.jpg" alt="">
+            <h3>Choississez un filtre :</h3>
+            <div id="filterContainer">
+                <ul id="filters">
+                    <li> <a ng-click="filterAction('normal')">Normal</a> </li>
+                    <li> <a ng-click="filterAction('vintage')">Vintage</a> </li>
+                    <li> <a ng-click="filterAction('lomo')">Lomo</a> </li>
+                    <li> <a ng-click="filterAction('clarity')">Clarity</a> </li>
+                    <li> <a ng-click="filterAction('sinCity')">Sin City</a> </li>
+                    <li> <a ng-click="filterAction('sunrise')">Sunrise</a> </li>
+                    <li> <a ng-click="filterAction('crossProcess')">Cross Process</a> </li>
+                    <li> <a ng-click="filterAction('orangePeel')">Orange Peel</a> </li>
+                    <li> <a ng-click="filterAction('love')">Love</a> </li>
+                    <li> <a ng-click="filterAction('grungy')">Grungy</a> </li>
+                    <li> <a ng-click="filterAction('jarques')">Jarques</a> </li>
+                    <li> <a ng-click="filterAction('pinhole')">Pinhole</a> </li>
+                    <li> <a ng-click="filterAction('oldBoot')">Old Boot</a> </li>
+                    <li> <a ng-click="filterAction('glowingSun')">Glowing Sun</a> </li>
+                    <li> <a ng-click="filterAction('hazyDays')">Hazy Days</a> </li>
+                    <li> <a ng-click="filterAction('herMajesty')">Her Majesty</a> </li>
+                    <li> <a ng-click="filterAction('nostalgia')">Nostalgia</a> </li>
+                    <li> <a ng-click="filterAction('hemingway')">Hemingway</a> </li>
+                    <li> <a ng-click="filterAction('concentrate')">Concentrate</a> </li>
+                </ul>
+            </div>
             <h3>Choississez un cadre :</h3>
             <div id="frames" class="row">
                 <div class="col">
